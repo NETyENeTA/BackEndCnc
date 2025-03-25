@@ -19,5 +19,8 @@ class Program
         MyConsole console = new();
         console.Run(new(name, age));
         console.Start();
+
+        // Stops Console, else it will close itself :>
+        Console.ReadLine();
     }
 }
