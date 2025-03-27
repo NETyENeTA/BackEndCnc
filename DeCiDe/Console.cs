@@ -17,14 +17,14 @@ public class MyConsole
     /// </summary>
     /// <param name="user">It's just a user!</param>
     /// <returns>so, it return true, else false</returns>
-    static bool NameWithoutNumbers(User user) => user.Name.Includes([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]);
+    static bool NameWithoutNumbers(User user) => user.Name.Includes([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
     /// <summary>
     /// Checks user.Name, if it has any spaces like this "My Name".
     /// </summary>
     /// <param name="user">It's just a user!</param>
     /// <returns>so, it return true, else false</returns>
-    static bool SpaceInName(User user) => user.Name.Contains(" ");
+    static bool SpaceInName(User user) => user.Name.Contains(' ');
 
     /// <summary>
     /// Checks user.Name, if it has any special symbols like this "#My!Name{}Is|Adrian".
@@ -54,7 +54,7 @@ public class MyConsole
     public void Run(User user)
     {
         DUser[] checks = [NameWithoutNumbers, SpaceInName, NameWithoutSpecialSymbols];
-        
+
 
         // It would have been possible to add separate checks and assign an error to each of them, but I chose the general one -invalid username.
         foreach (DUser check in checks) if (check(user)) throw new ErrorWithName("\nPlease retype a name without special symbols.");
